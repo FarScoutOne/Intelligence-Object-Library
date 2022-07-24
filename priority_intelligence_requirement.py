@@ -5,14 +5,14 @@ class PriorityIntelligenceRequirement:
         self.author = author
         self.enemy = enemy
         self.target = target
-        self.owners = set(author)
+        self.owners = {author}
 
     def add_owner(self, names: set) -> set:
         """This method assigns another owner to the PIR by name"""
         self.owners.update(names)
         return self.owners
 
-    def remove_owner(self, name: str) -> list:
+    def remove_owner(self, name: str) -> set:
         """This method removes a current owner from the PIR by name"""
         if name in self.owners:
             self.owners.remove(name)
