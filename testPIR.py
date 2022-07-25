@@ -2,39 +2,21 @@ import unittest
 from priority_intelligence_requirement import PriorityIntelligenceRequirement
 
 class TestIntelligence(unittest.TestCase):
-    def test_PIR_creation(self):
-        author = "Ryne Smith"
-        enemy = "Harkonnen"
-        target = "new base"
-        new_PIR = PriorityIntelligenceRequirement(author)
-        new_PIR.enemy = enemy
-        new_PIR.target = target
-        self.assertEqual(author, new_PIR.author)
-        self.assertEqual(enemy, new_PIR.enemy)
-        self.assertEqual(target, new_PIR.target)
+    def setUp(self):
+        self.pir = PriorityIntelligenceRequirement("Ryne Smith")
+        self.pir.enemy = "Harkonnen"
+        self.pir.target = "Base"
+        #self.requirement_string = "Where will the Harkonnens establish a new military base?"
 
     def test_add_owner(self):
-        author = "Ryne Smith"
-        enemy = "Harkonnen"
-        target = "new base"
-        new_PIR = PriorityIntelligenceRequirement(author)
-        new_PIR.enemy = enemy
-        new_PIR.target = target
-        new_PIR.add_owner({"Samantha Smith", "Paul Atreides"})
-        self.assertIn("Samantha Smith", new_PIR.owners)
+        self.pir.add_owner({"Samantha Smith", "Paul Atreides"})
+        self.assertIn("Samantha Smith", self.pir.owners)
 
     def test_remove_owner(self):
-        author = "Ryne Smith"
-        enemy = "Harkonnen"
-        target = "new base"
-        new_PIR = PriorityIntelligenceRequirement(author)
-        new_PIR.enemy = enemy
-        new_PIR.target = target
-        new_PIR.add_owner({"Samantha Smith", "Paul Atreides"})
-        new_PIR.remove_owner("Samantha Smith")
-        new_PIR.remove_owner("Ryne Smith")
-        self.assertNotIn("Samantha Smith", new_PIR.owners)
-        self.assertIn(new_PIR.author, new_PIR.owners, "The PIR's author should not be removed from the set of owners!")
+        self.pir.remove_owner("Samantha Smith")
+        self.pir.remove_owner("Ryne Smith")
+        self.assertNotIn("Samantha Smith", self.pir.owners)
+        self.assertIn(self.pir.author, self.pir.owners, "The PIR's author should not be removed from the set of owners!")
 
 if __name__ == '__main__':
     unittest.main()
