@@ -1,9 +1,9 @@
 import unittest
-from priority_intelligence_requirement import PriorityIntelligenceRequirement
+from pir import PIR
 
 class TestIntelligence(unittest.TestCase):
     def setUp(self):
-        self.pir = PriorityIntelligenceRequirement("Ryne Smith")
+        self.pir = PIR("Ryne Smith")
         self.pir.enemy = "Harkonnen"
         self.pir.target = "Base"
         self.req_string = "Where will the Harkonnens establish a military base?"

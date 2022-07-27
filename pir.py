@@ -1,4 +1,4 @@
-class PriorityIntelligenceRequirement:
+class PIR:
     """Defines a PIR by author"""
 
     def __init__(self, author: str, enemy: str = None, target: str = None):
