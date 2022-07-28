@@ -1,0 +1,20 @@
+{
+  "paul.atreides": {
+    "fname": "Paul",
+    "mname": "",
+    "lname": "Atreides",
+    "email": "paul.atreides@arrakis.net"
+  },
+  "the_duke": {
+    "fname": "Leto",
+    "mname": "",
+    "lname": "Atreides",
+    "email": "duke.leto@arrakis.net"
+  },
+  "master_assassin": {
+    "fname": "Thufir",
+    "mname": "",
+    "lname": "Hawat",
+    "email": "mentat237@arrakis.net.smith"
+  }
+}
